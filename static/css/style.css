@@ -1,0 +1,179 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #292929;
+    background:
+        linear-gradient(rgba(25, 15, 15, 0.72), rgba(25, 15, 15, 0.78)),
+        url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg')
+        center/cover fixed no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+/* Main prediction card */
+
+.login {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    margin: 55px auto 25px;
+    padding: 38px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 22px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Heading */
+
+.login h1 {
+    color: #cb202d;
+    font-size: 29px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+}
+
+.login h1::after {
+    content: '';
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #cb202d;
+    margin: 14px auto 25px;
+    border-radius: 10px;
+}
+
+/* Form */
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 15px 16px;
+    margin: 0;
+    background: #f8f8f8;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.25s ease;
+    box-shadow: none;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+input:focus {
+    background: #fff;
+    border-color: #cb202d;
+    box-shadow: 0 0 0 3px rgba(203, 32, 45, 0.10);
+}
+
+/* Predict button */
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
+}
+
+.btn-block {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: block;
+}
+
+.btn-large {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background: #cb202d;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(203, 32, 45, 0.25);
+}
+
+.btn-primary:hover {
+    background: #a91824;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(203, 32, 45, 0.35);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Prediction result */
+
+.login > br {
+    display: none;
+}
+
+.login > h2 {
+    margin-top: 22px;
+}
+
+.login {
+    overflow-wrap: anywhere;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .login {
+        margin-top: 35px;
+        padding: 25px 18px;
+    }
+
+    .login h1 {
+        font-size: 23px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-block {
+        grid-column: auto;
+    }
+}

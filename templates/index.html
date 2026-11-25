@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Restaurant Rating Predictor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="login">
+
+        <h1>Zomato Rating Predictor</h1>
+
+        <p style="color:#777; font-size:13px; margin-bottom:25px;">
+            Predict restaurant ratings using Machine Learning
+        </p>
+
+        <form action="{{ url_for('predict') }}" method="POST">
+
+            <input type="number" name="Online Order"
+                   placeholder="Online Order (0 or 1)"
+                   min="0" max="1" step="1" required>
+
+            <input type="number" name="Book Table"
+                   placeholder="Book Table (0 or 1)"
+                   min="0" max="1" step="1" required>
+
+            <input type="number" name="Votes"
+                   placeholder="Number of Votes"
+                   min="0" max="16832" step="1" required>
+
+            <input type="number" name="Location"
+                   placeholder="Location Code (0-87)"
+                   min="0" max="87" step="1" required>
+
+            <input type="number" name="Restaurant Type"
+                   placeholder="Restaurant Type Code (0-72)"
+                   min="0" max="72" step="1" required>
+
+            <input type="number" name="Cuisines"
+                   placeholder="Cuisines Code (0-1680)"
+                   min="0" max="1680" step="1" required>
+
+            <input type="number" name="Cost"
+                   placeholder="Average Cost for Two"
+                   min="40" max="6000" step="any" required>
+
+            <input type="number" name="Menu Item"
+                   placeholder="Menu Item Code (0-5047)"
+                   min="0" max="5047" step="1" required>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">
+                Predict Restaurant Rating
+            </button>
+
+        </form>
+
+        {% if prediction_text %}
+            <div style="
+                margin-top:25px;
+                padding:15px;
+                background:#fff0f1;
+                color:#cb202d;
+                border-radius:10px;
+                font-weight:600;">
+                {{ prediction_text }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
